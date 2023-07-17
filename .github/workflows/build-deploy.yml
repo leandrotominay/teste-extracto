@@ -34,7 +34,7 @@ jobs:
       - name: Deploy to Docker
         uses: docker/deploy-action@v1
         with:
-          name: your-image-name
+          name: extractodao
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           registry: docker.io
