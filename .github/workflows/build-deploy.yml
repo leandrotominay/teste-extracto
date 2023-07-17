@@ -21,18 +21,3 @@ jobs:
 
       - name: Push Docker image
         run: docker push swr.la-south-2.myhuaweicloud.com/extracto/gitaction
-
-  deploy:
-    needs: build
-
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Deploy to Docker
-        uses: docker/deploy-action@v1
-        with:
-          name: gitaction
-          username: la-south-2@G3EN2FVUJC39183TR9PF
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          registry: docker.io
-          tags: latest
