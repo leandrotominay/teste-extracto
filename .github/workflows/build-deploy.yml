@@ -1,4 +1,4 @@
-name: Build and Deploy SWR
+name: Build and Deploy SWR Test
 
 on:
   push:
