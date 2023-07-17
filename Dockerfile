@@ -4,17 +4,11 @@ FROM node:14-alpine
 # Set the working directory
 WORKDIR /app
 
-# Copy the package.json and package-lock.json files
-COPY package*.json ./
-
-# Install dependencies
-RUN npm install
-
-# Copy the source code
-COPY . .
+# Copy the index.html file
+COPY index.html .
 
 # Expose the desired port (e.g., 3000)
 EXPOSE 3000
 
 # Start the application
-CMD ["npm", "start"]
+CMD ["node", "-e", "console.log('Hello, World!')"]
