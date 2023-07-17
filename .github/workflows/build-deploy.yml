@@ -17,44 +17,6 @@ jobs:
         run: docker build -t extractodao .
 
       - name: Log in to Docker Hub (or your preferred container registry)
-        run: docker login -u YOUR_USERNAME -p YOUR_PASSWORD
-
-      - name: Push Docker image
-        run: docker push extractodao
-
-  deploy:
-    needs: build
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Deploy to Docker
-        uses: docker/deploy-action@v1
-        with:
-          name: your-image-name
-          username: YOUR_USERNAME
-          password: YOUR_PASSWORD
-          registry: docker.io
-          tags: latest
-name: Build and Deploy SWR Test
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Build and tag Docker image
-        run: docker build -t extractodao .
-
-      - name: Log in to Docker Hub (or your preferred container registry)
         run: docker login -u leandrorfrancisco -p Huawei@123
 
       - name: Push Docker image
