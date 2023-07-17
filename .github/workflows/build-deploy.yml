@@ -17,7 +17,7 @@ jobs:
         run: docker build -t swr.la-south-2.myhuaweicloud.com/extracto/gitaction .
 
       - name: Log in to Docker Hub (or your preferred container registry)
-        run: docker login -u la-south-2@G3EN2FVUJC39183TR9PF -p 750f65bb44bc5dd870dff29f4054aaee0de2540a7d0139df17c72dc5625f5b78 swr.la-south-2.myhuaweicloud.com
+        run: docker login -u la-south-2@G3EN2FVUJC39183TR9PF -p ${{ secrets.DOCKER_PASSWORD }} swr.la-south-2.myhuaweicloud.com
 
       - name: Push Docker image
         run: docker push swr.la-south-2.myhuaweicloud.com/extracto/gitaction
@@ -32,7 +32,7 @@ jobs:
         uses: docker/deploy-action@v1
         with:
           name: gitaction
-          username: ramosleandro53@gmail.com
+          username: la-south-2@G3EN2FVUJC39183TR9PF
           password: ${{ secrets.DOCKER_PASSWORD }}
           registry: docker.io
           tags: latest
