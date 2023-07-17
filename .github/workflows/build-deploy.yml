@@ -23,7 +23,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push Docker image
-        run: docker extractotest
+        run: docker push extractotest
 
   deploy:
     needs: build
