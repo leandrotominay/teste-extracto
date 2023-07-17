@@ -17,7 +17,7 @@ jobs:
         run: docker build -t extractodao .
 
       - name: Log in to Docker Hub (or your preferred container registry)
-        run: docker login -u ramosleandro53@gmail.com -p Huawei@123
+        run: echo "Huawei@123" | docker login -u ramosleandro53@gmail.com --password-stdin
 
       - name: Push Docker image
         run: docker push extractodao
@@ -33,6 +33,6 @@ jobs:
         with:
           name: extractodao
           username: ramosleandro53@gmail.com
-          password: Huawei@123
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
           registry: docker.io
           tags: latest
