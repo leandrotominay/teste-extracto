@@ -17,7 +17,7 @@ jobs:
         run: docker build -t swr.la-south-2.myhuaweicloud.com/extracto/gitaction .
 
       - name: Log in to Docker Hub (or your preferred container registry)
-        run: docker login -u testuser -p 0ONINHGUCPKUWMASBCSX swr.la-south-2.myhuaweicloud.com
+        run: docker login -u testuser -p ju0rjciGVkntt5AcDqZBdr038ZxCbCVhRRB6x4UP swr.la-south-2.myhuaweicloud.com
 
       - name: Push Docker image
         run: docker push swr.la-south-2.myhuaweicloud.com/extracto/gitaction
